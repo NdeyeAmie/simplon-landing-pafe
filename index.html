@@ -1,121 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>landing page Simplon Sénégal</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <header class="header">
-        <img src="logo.svg" class="logo" alt="image">
+        <img src="data:image/png;base64,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"
+            class="logo" alt="image" />
         <nav class="navbar">
-            
-            <!-- <div class="right"> -->
-                <a href="#accueil" class="active">Accueil</a>
-                <a href="#fabique">Fabrique</a>
-                <a href="#formation">Formation</a>
-                <a href="#partenaire">Partenariats</a>
-                <a href="#espace">Espaces</a>
-                <a href="#entite">Entités</a>
-                <a href="#contact">Contacts</a> 
+            <a href="#accueil" class="active">Accueil</a>
+            <a href="#fabique" class="nav-link">Fabrique</a>
+            <a href="#formation" class="nav-link">Formation</a>
+            <a href="#partenaire" class="nav-link">Partenariats</a>
+            <a href="#espace" class="nav-link">Espaces</a>
+            <a href="#entite" class="nav-link">Entités</a>
+            <a><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a>
+                <select>
+                <option value="option1">FR</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </a>
+            <a href="#button"><button class="btn-nav">Contacts</button></a>
         </nav>
     </header>
     <section id="fabrique">
-        <h2 class="heading"> La petite histoire</h2>
+        <h2 class="heading">La petite histoire</h2>
         <div class="fabrique-container">
-            <h3> L’ouverture de la Fabrique <br> <span>2017</span>
-                    </h3>
+            <div class="fabrique-title-container">
+                <p>L’ouverture de la Fabrique</p>
+                <p>2017</p>
+                <div class="fabrique-title-container-1"></div>
+                <div class="fabrique-title-container-2"></div>
+            </div>
             <div class="fabrique-box">
-                <q><p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eligendi voluptate necessitatibus minus fugiat laudantium,
-                    quia perferendis error reprehenderit rem aliquid velit facilis vel soluta? Harum quia perferendis
-                    molestias laudantium nobis.
-                </p>
-            </q>
+                <blockquote class="blockquote">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+                        voluptate necessitatibus minus fugiat laudantium, quia perferendis
+                        error reprehenderit rem aliquid velit facilis vel soluta? Harum
+                        quia perferendis molestias laudantium nobis.
+                    </p>
+                </blockquote>
+            </div>
+            <div class="bg-fabrique-box"></div>
+            <div class="dots">
+                <div class="dot-one"></div>
+                <div class="dot-two"></div>
+                <div class="dot-three"></div>
+            </div>
         </div>
-        <div class="bg-fabrique-box"></div>
-            <div class="comen">
-            <div class="comen-one"></div>  
-            <div class="comen-two"></div>
-            <div class="comen-three"></div>
-        </div>
-        </div>
-</section>
-<section class="formation" id="formation">
-    <h2 class="heading-formation"> Notre pédagogies</h2>
-    <div class="formation-container">
-        <video width="320" height="240" controls>
-            <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg> <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
-          </video> 
-          <div class="formation-box">
-            <h3>La pédagogie active</h3> 
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing
-                elit. Maiores laboriosam deleniti, culpa perspiciatis
-                nemo quos illum? Inventore non totam ea, optio
-                voluptates eveniet in sequi quasi dolorem
-                molestiae saepe eaque, enim laudantium corrupti
-                iure quisquam a amet reprehenderit atque fugiat?
-                Inventore non totam ea, optio voluptates.</p>
-        </div>
-        <div class="firt-comen">
-        <div class="comen-formation"></div>
-    </div>
-    </div>
     </section>
-    <section class="pedagogies" id="pedagogies">
-        <h2 class="heading-pedagogies"> Les 6 pliers de notre pegadogie</h2>
-        <div class="pedagogies-container">   
-            <div class="pedagogies-box-content">
-                <div class="pedagogies-box">
-                    <h3>01 <br>Devenir un professionnel compétent</h3>
-                    <p>Nous formons les apprenants à devenir
-                        des professionnels compétents en
-                        situation de travail, grâce à l’Approche
-                        Par Compétences.</p>
+    <section class="section-container">
+        <section class="formation" id="formation">
+            <h2 class="heading-formation">Notre pédagogies</h2>
+            <div class="formation-container">
+                <video width="320" height="240" controls>
+                    <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
+                    <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
+                </video>
+                <div class="formation-box">
+                    <h3>La pédagogie active</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+                        laboriosam deleniti, culpa perspiciatis nemo quos illum? Inventore
+                        non totam ea, optio voluptates eveniet in sequi quasi dolorem
+                        molestiae saepe eaque, enim laudantium corrupti iure quisquam a
+                        amet reprehenderit atque fugiat? Inventore non totam ea, optio
+                        voluptates.
+                    </p>
                 </div>
-                <div class="pedagogies-box">
-                    <h3>02 <br>Se former par l’action</h3>
-                    <p>Nous formons les apprenants à devenir
-                        des professionnels compétents en
-                        situation de travail, grâce à l’Approche
-                        Par Compétences.</p>
-                </div>
-                <div class="pedagogies-box">
-                    <h3>03 <br>Valoriser les apprentissages</h3>
-                    <p>Nous formons les apprenants à devenir
-                        des professionnels compétents en
-                        situation de travail, grâce à l’Approche
-                        Par Compétences.</p>
-                </div>
-                <div class="pedagogies-box">
-                    <h3>04 <br>Impliquer l’entreprise au plus tôt</h3>
-                    <p>Nous formons les apprenants à devenir
-                        des professionnels compétents en
-                        situation de travail, grâce à l’Approche
-                        Par Compétences.</p>
-                </div>
-                <div class="pedagogies-box">
-                    <h3>05 <br>Accompagner avec une équipe</h3>
-                    <p>Nous formons les apprenants à devenir
-                        des professionnels compétents en
-                        situation de travail, grâce à l’Approche
-                        Par Compétences.</p>
-                </div>
-                <div class="pedagogies-box">
-                    <h3>06 <br>Construire des collectifs d’apprenant</h3>
-                    <p>Nous formons les apprenants à devenir
-                        des professionnels compétents en
-                        situation de travail, grâce à l’Approche
-                        Par Compétences.</p>
+                <div class="firt-comen">
+                    <div class="comen-formation"></div>
                 </div>
             </div>
-              
-            <div class="img">
-                <img src="https://senegal.simplon.co/uploads/Mini-sites%20Internationaux/Mini%20site%20Senegal/Simplon-KIDS.jpg" alt="image"> 
+        </section>
+        <!-- pedagogies-------- -->
+        <section class="pedagogies" id="pedagogies">
+            <div class="pedagogies-container">
+                <div>
+                    <h2 class="heading-pedagogies">Les 6 pliers de notre pegadogie</h2>
+                    <div class="pedagogies-box-content">
+                        <div class="pedagogies-box">
+                            <h3>01</h3>
+                            <p>Devenir un professionnel compétent</p>
+                            <span>
+                                Nous formons les apprenants à devenir des professionnels
+                                compétents en situation de travail, grâce à l’Approche Par
+                                Compétences.
+                            </span>
+                        </div>
+                        <div class="pedagogies-box">
+                            <h3>02</h3>
+                            <p>Se former par l’action</p>
+                            <span>
+                                Nous formons les apprenants à devenir des professionnels
+                                compétents en situation de travail, grâce à l’Approche Par
+                                Compétences.
+                            </span>
+                        </div>
+                        <div class="pedagogies-box">
+                            <h3>03</h3>
+                            <p>Valoriser les apprentissages</p>
+                            <span>
+                                Nous formons les apprenants à devenir des professionnels
+                                compétents en situation de travail, grâce à l’Approche Par
+                                Compétences.
+                            </span>
+                        </div>
+                        <div class="pedagogies-box">
+                            <h3>04</h3>
+                            <p>Impliquer l’entreprise au plus tôt</p>
+                            <span>
+                                Nous formons les apprenants à devenir des professionnels
+                                compétents en situation de travail, grâce à l’Approche Par
+                                Compétences.
+                            </span>
+                        </div>
+                        <div class="pedagogies-box">
+                            <h3>05</h3>
+                            <p>Accompagner avec une équipe</p>
+                            <span>
+                                Nous formons les apprenants à devenir des professionnels
+                                compétents en situation de travail, grâce à l’Approche Par
+                                Compétences.
+                            </span>
+                        </div>
+                        <div class="pedagogies-box">
+                            <h3>06</h3>
+                            <p>Construire des collectifs d’apprenant</p>
+                            <span>
+                                Nous formons les apprenants à devenir des professionnels
+                                compétents en situation de travail, grâce à l’Approche Par
+                                Compétences.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://senegal.simplon.co/uploads/Mini-sites%20Internationaux/Mini%20site%20Senegal/Simplon-KIDS.jpg"
+                        class="img-container" alt="image" />
+                </div>
+                <div class="image-bg"></div>
+            </div>
+        </section>
+
+        <!-- <section class="valeurs" id="valeurs"></section> -->
+        <section class="valeurs" id="valeurs">
+            <h2 class="heading-valeurs">Nos valeurs</h2>
+            <div class="contenaire-valeurs">
+                <div class="valeurs-box">
+                    <h3>Respect</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+                        laboriosam deleniti, culpa perspiciatis nemo quos illum? Inventore
+                        non totam ea, optio voluptates eveniet in sequi quasi dolorem
+                        molestiae saepe eaque, enim laudantium corrupti iure quisquam a
+                        amet reprehenderit atque fugiat?Inventore non totam ea, optio
+                        voluptates eveniet in sequi quasi dolorem molestiae saepe eaque,
+                        enim laudantium corrupti iure quisquam a amet reprehenderit atque
+                        fugiat?
+                    </p>
+                    <button class="btn-box">voir plus</button>
+                </div>
+                <div class="next-box">
+                    <div class="small-box">
+                        <div class="small-box-num">
+                            <p>01</p>
+                        </div>
+                        <div class="small-box-text">
+                            <p>Respect</p>
+                            <span>Lorem ipsum dolor sit, amet consectetur</span>
+                        </div>
+                    </div>
+                    <div class="small-box">
+                        <div class="small-box-num">
+                            <p>01</p>
+                        </div>
+                        <div class="small-box-text">
+                            <p>Respect</p>
+                            <span>Lorem ipsum dolor sit, amet consectetur</span>
+                        </div>
+                    </div>
+                    <div class="small-box">
+                        <div class="small-box-num">
+                            <p>01</p>
+                        </div>
+                        <div class="small-box-text">
+                            <p>Respect</p>
+                            <span>Lorem ipsum dolor sit, amet consectetur</span>
+                        </div>
+                    </div>
+                    <div class="small-box">
+                        <div class="small-box-num">
+                            <p>01</p>
+                        </div>
+                        <div class="small-box-text">
+                            <p>Respect</p>
+                            <span>Lorem ipsum dolor sit, amet consectetur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- section chifre -->
+    <section class="chiffres" id="chiffres">
+        <h2 class="heading-chiffres">Nos chiffres</h2>
+        <div class="contenaire-chiffres">
+            <div class="main">
+                <h3>50%</h3>
+                <p>De femmes dans les</p>
+                <p>formations</p>
+            </div>
+            <div class="main">
+                <h3>385</h3>
+                <p>Apprenant.es formé.es</p>
+                <p>depuis l’ouverture dans le</p>
+                <p>pays</p>
+            </div>
+            <div class="main">
+                <h3>96</h3>
+                <p>Enfants sensibilisé.e.s au</p>
+                <p>numérique</p>
             </div>
         </div>
-        </section>
+    </section>
+    <!-- notre equipe -->
+    <section class="equipe" id="espace">
+        <h2 class="heading-equipe">Notre Équipe</h2>
+        <div class="contenaire">
+            <div class="contenaire-equipe">
+                <div class="text-p">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>recusandae quod eveniet sit </p>
+                </div>
+                <div class="card">
+                    <div class="card-picture">
+                        <img class="img-profile"
+                            src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694258662/mentor1_izdott.png"
+                            alt="images">
+                        <div class="card-text">
+                            <div class="p-text">
+                                <h2>Ngoor SECK</h2>
+                                <h3>Formateur</h3>
+                            </div>
+                            <p>Fermentum massa justo sit
+                                amet risus morbi leo.</p>
+                        </div>
+                        <div class="social-media">
+                            <a href="#twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-picture">
+                        <img class="img-profile"
+                            src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694259319/mentore2_ouw0xc-removebg-preview_fkenw6.png"
+                            alt="images">
+                        <div class="card-text">
+                            <div class="p-text">
+                                <h2>Ngoor SECK</h2>
+                                <h3>Formateur</h3>
+                            </div>
+                            <p>Fermentum massa justo sit
+                                amet risus morbi leo.</p>
+                        </div>
+                        <div class="social-media">
+                            <a href="#twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-picture">
+                        <img class="img-profile"
+                            src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694258830/mentor3_vsmfgd.png"
+                            alt="images">
+                        <div class="card-text">
+                            <div class="p-text">
+                                <h2>Ngoor SECK</h2>
+                                <h3>Formateur</h3>
+                            </div>
+                            <p>Fermentum massa justo sit
+                                amet risus morbi leo.</p>
+                        </div>
+                        <div class="social-media">
+                            <a href="#twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dots-equipe">
+                <div class="dot-one-equipe"></div>
+                <div class="dot-two-equipe"></div>
+                <div class="dot-three-equipe"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Recrutement---- -->
+    <section class="recrutement" id="recrutement">
+        <h2 class="heading-formation">Recrutement</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694264994/Capture_vmu8lt.png"
+                    alt="simplon learners" style="width: 100%; height: 100%;" />
+            </div>
+            <div class="grid-item">
+                <h1 class="heading-title">
+                    Pourquoi nous rejoindre ?
+                </h1>
+                <p class="heading-content">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+                    laboriosam deleniti, culpa perspiciatis nemo quos illum? Inventore non
+                    totam ea, optio voluptates eveniet in sequi quasi dolorem molestiae saepe
+                    eaque, enim laudantium corrupti iure quisquam a amet reprehenderit
+                    atque fugiat?Inventore non totam ea, optio voluptates eveniet in sequi qu
+                    eaque, enim laudantium corrupti iure quisquam a amet reprehenderit
+                    atque fugiat?Inventore non totam ea, optio voluptates eveniet in sequi qu
+                </p>
+            </div>
+            <div class="grid-item">
+                <div class="container-box">
+                    <h1 class="h1">Offres en cours</h1>
+                    <div class="divider"></div>
+                    <div class="box-heading">
+                        <h2 class="h2">Formateur référent</h2>
+                        <div style="display: flex; margin-left: 80%;">
+                            <div class="shot-divider"></div>
+                        </div>
+                    </div>
+                    <div class="heading_box">
+                        <div style="padding-top: 10px;">
+                            <h3 class="h3">Résumé du poste</h3>
+                            <p class="heading-desc">
+                                Unde temporibus
+                                amet est! Perferendis
+                                sapienteanimisperiores
+                                dicta maxime doloremque,
+                                ue pienteautofficia
+                            </p>
+                        </div>
+                        <div class="box">
+                            <div class="head_box">
+                                <div>
+                                    <i class="fa-solid fa-book icon"></i>
+                                </div>
+                                <div>
+                                    <span>CDD</span>
+                                </div>
+                            </div>
+                            <div class="head_box">
+                                <div>
+                                    <i class="fa-solid fa-calendar icon"></i>
+                                </div>
+                                <div>
+                                    <span>Plein temps</span>
+                                </div>
+                            </div>
+                            <div class="head_box">
+                                <div>
+                                    <i class="fa-solid fa-location-dot icon"></i>
+                                </div>
+                                <div>
+                                    <span>Dakar</span>
+                                </div>
+                            </div>
+                            <div class="head_box">
+                                <div>
+                                    <i class="fa-solid fa-clock icon"></i>
+                                </div>
+                                <div>
+                                    <span>xx/yy/zz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 30px;">
+                        <button class="bnt-post">Postuler</button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="box-heading">
+                        <h2 class="h2">Formateur référent</h2>
+                        <div style="display: flex; margin-left: 80%;">
+                            <i class="fa-solid fa-circle-plus icons"></i>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="box-heading">
+                        <h2 class="h2">Formateur référent</h2>
+                        <div style="display: flex; margin-left: 80%;">
+                            <i class="fa-solid fa-circle-plus icons"></i>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div style="display: flex; float: right; padding: 0px 30px;">
+                        <a style="color: black;" href="#">Afficher plus</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <input class="input" type="text" id="nom" name="nom" placeholder="Nom *">
+                    </div>
+                    <div class="grid-item">
+                        <input class="input" type="text" id="prenom" name="prenom" placeholder="Prenom *">
+                    </div>
+                    <div class="grid-item">
+                        <input class="input" type="text" id="tel" name="tel" placeholder="Tel *">
+                    </div>
+                    <div class="grid-item">
+                        <input class="input" type="text" id="phone" name="phone" placeholder="Phone *">
+                    </div>
+                </div>
+                <textarea class="textarea" name="message" id="message" placeholder="Message *" cols="30"
+                    rows="8"></textarea>
+                <div class="check">
+                    <input type="checkbox" id="check" name="check" value="check">
+                    <label for="check1"> I agree to terms and policy</label><br>
+                </div>
+                <div class="button">
+                    <button class="bnt-post">Postuler</button>
+                </div>
+                <div class="button">
+                    <p>* These field are required</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Partenaire---------- -->
+    <section class="partenaire" id="entite">
+        <h2 class="heading-partenaire">Nos Partenaires</h2>
+        <div class="partenaire-main">
+            <div class="contenaire-patenaire">
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266195/Capture1_l7jxro.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266231/Capture2_g1hztf.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266361/Capture3_zv35gp.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266385/Capture4_kk9nzt.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266409/Capture5_xnjqy3.png"
+                        alt="image">
+                </div>
+            </div>
+            <div class="contenaire-patenaire">
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266195/Capture1_l7jxro.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266231/Capture2_g1hztf.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266361/Capture3_zv35gp.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266385/Capture4_kk9nzt.png"
+                        alt="image">
+                </div>
+                <div class="img-partenaire">
+                    <img src="https://res.cloudinary.com/dgeib3q2u/image/upload/v1694266409/Capture5_xnjqy3.png"
+                        alt="image">
+                </div>
+            </div>
+            <div class="dots-partenaire">
+                <div class="dot-one-partenaire"></div>
+                <div class="dot-two-partenaire"></div>
+                <div class="dot-three-partenaire"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer----------------- -->
+    <footer class="footer" id="footer">
+        <div class="all-footer">
+        <div class="footer-container">
+            <div class="main-footer">
+                <img class="img-footer" src="https://simplon.sn/wp-content/uploads/2022/02/logo-simplon-white.png"
+                    alt="" width="180" height="69"
+                    data-lazy-src="https://simplon.sn/wp-content/uploads/2022/02/logo-simplon-white.png"
+                    data-was-processed="true">
+                <div class="social-media-footer">
+                    <a href="#twitter" class="twitter" ><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#facebook" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#linkedin" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#youtube" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="main-footer">
+                <div class="btn-main"></div>
+               <button class="btn-footer">Voir plus</button>
+               <div class="footer-text">
+               <p>A propos</p>
+               <p> Notre histoire</p>
+               <p>Condition d’utilisation</p>
+               <p> Politique de confidentialité</p>
+               <p>FAQ</p>
+            </div>
+            </div>
+            <div class="main-footer">
+                <h2>Coordonnées</h2>
+                <div class="footer-text-next1">
+                <p>Cité keur Goor Gi
+                   <p> Dakar, Sicap, Libeté 2</p>
+                    Senegal
+                 </p>
+             </div>
+             <div class="footer-text-next2">
+                <p>simplon@email.com</p>
+                <p>help@simplon.com</p>
+                <p>(221) 77 456 78 90</p>
+                <p>(221) 77 654 32 10</p>
+             </div>
+             </div>
+             <div class="main-footer">
+                <h2>Notre Newsletter</h2>
+                <div class="footer-text-last">
+                <p>Souscrivez-vous à notre
+                    <p>newsletter pour ne manquer</p>
+                    <p>aucune de nos activités</p>
+                 </p>
+             </div>
+             <div class="input-box">
+                <input type="email" placeholder="">
+                <p>Joinder</p>
+            </div>
+             </div>
+        </div>
+        
+    </div>
+</footer>
+<section>
+    <div class="last-footer">
+        <div class="last-footer-p">
+        <p>© 2021 Simplon. All rights reserved.</p>
+    </div> 
+     <div class="last-footer-p2">
+        <p>Made with &hearts; by SimplonP4</p>
+     </div>
+    </div>
+</section>
 </body>
+<script src="./script.js"></script>
+</body>
+
 </html>
